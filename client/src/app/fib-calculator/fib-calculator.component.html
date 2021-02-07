@@ -1,0 +1,27 @@
+<div class="fib_container">
+  <div class="header_sec">
+    <label class="header_label">Fibonacci Calculator</label>
+  </div>
+  <div class="body_sec">
+    <div class="input_sec">
+      <label style="width: 25%;font-size: 1.3rem;">Enter Your Index</label>
+      <input type="text" [(ngModel)]="enteredInput" style="width: 25%;height: 1.6rem;">
+      <button (click)="submit()" style="width: 45%;height: 2rem;">Submit</button>
+    </div>
+
+    <div class="prev_indices">
+      <label style="font-size: 1.6rem;font-weight: 600;height: 2rem;">Indicies I have seen</label>
+      <label style="font-size: 1.5rem;font-weight: 600;height:2rem;">{{seenIndicies}}</label>
+    </div>
+
+    <div class="calculated_values_sec">
+      <label style="font-size: 1.5rem;font-weight: 600;">Calculated Values</label>
+      <div class="calculated_values" *ngFor="let value of allCalculatedValues;">
+        <label style="font-size: 1.3rem;">For Index {{value.index}} | Calculated Value {{value.value}}</label>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="footer_sec">
+    <label>Footer Sec</label>
+  </div> -->
+</div>
