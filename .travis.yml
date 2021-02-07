@@ -2,21 +2,21 @@ language: generic
 sudo: required
 services:
   - docker
-  - xvfb
-addons:
-apt:
-  sources:
-    - google-chrome
-  packages:
-    - google-chrome-stable
+#  - xvfb
+#addons:
+#apt:
+#  sources:
+#    - google-chrome
+#  packages:
+#    - google-chrome-stable
 
 before_install:
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
+#  - export CHROME_BIN=chromium-browser
+#  - export DISPLAY=:99.0
   - docker build -t prashitprakhar/docker-angular-test -f ./client/Dockerfile.dev ./client
 
-script:
-  - docker run -e CI=true prashitprakhar/docker-angular-test npm run e2e
+#script:
+#  - docker run -e CI=true prashitprakhar/docker-angular-test npm run e2e
 
 after_success:
   - docker build -t prashitprakhar/multi-client ./client
