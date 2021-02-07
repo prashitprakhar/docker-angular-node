@@ -6,7 +6,7 @@ before_install:
   - docker build -t prashitprakhar/docker-angular-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run CI=true prashitprakhar/docker-angular-test npm run test -- --coverage
+  - docker run -e CI=true prashitprakhar/docker-angular-test npm run test -- --coverage
 
 after_success:
   - docker build -t prashitprakhar/multi-client ./client
